@@ -3,102 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Blog of Jude Hoogterp</title>
-    
-    <!-- Favicon links -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io-3/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io-3/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io-3/favicon-16x16.png">
-    <link rel="manifest" href="favicon_io-3/site.webmanifest">
+    <title>Jude Hoogterp</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: white;
+            box-sizing: border-box;
         }
-        .hero-container {
-            position: relative;
-            height: 100vh;
-            background-color: black;
-        }
-        .hero-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-        }
-        .hero-title {
-            position: absolute;
-            bottom: 60px;
-            left: 70px;
-            font-size: 5em;
-            margin: 3;
-            color: white;
-        }
-        .content {
-            position: relative;
-            padding: 80px;
-            font-size: 1.5em;
-            margin: 0;
-            margin-left: 50%;
-            width: calc(50% - 160px);
-            background-color: white;
-            color: black;
-            min-height: 100vh;
-            text-align: left;
-        }
-        .footer {
-            padding: 20px;
-            color: black;
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: #fff;
+            color: #000;
+            line-height: 1.6;
+            padding: 60px 80px 60px 80px;
             display: flex;
             justify-content: space-between;
-            font-size: 0.8em;
-            background-color: white;
-            
-            
+            gap: 60px;
         }
-        .blog-image {
-            max-width: 100%;
+
+        .content {
+            max-width: 680px;
+            margin-top: calc(3rem * 1.6 + 32px);
+        }
+
+        .side-image {
+            align-self: flex-start;
+            text-align: right;
+        }
+
+        .side-image img {
+            width: 700px;
             height: auto;
-            margin: 20px 0;
+            display: block;
         }
-        .blog-date {
-            font-style: italic;
+
+        .side-image .caption {
+            font-size: 0.75rem;
+            color: #888;
+            text-align: right;
+            margin-top: 8px;
+        }
+
+        header {
+            margin-bottom: 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 16px;
+        }
+
+        .links {
+            display: flex;
+            gap: 20px;
+            font-size: 0.95rem;
+        }
+
+        .links a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+            transition: opacity 0.2s;
+        }
+
+        .links a:hover {
+            opacity: 0.6;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            color: #555;
+        }
+
+        .intro {
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+
+        .item {
+            margin-bottom: 24px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .item-title a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .item-title a:hover {
+            border-bottom-color: #000;
+        }
+
+        .item-meta {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .item-description {
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .project-tech {
+            font-size: 0.85rem;
             color: #666;
-            margin-bottom: 20px;
+            margin-top: 4px;
         }
-        .blog-title {
-            font-size: 2em;
-            margin-bottom: 10px;
+
+        .highlight {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        footer a {
+            color: #000;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .links {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .item-header {
+                flex-direction: column;
+                gap: 2px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="hero-container">
-        <img src="spacetime.png" alt="Space time sim" class="hero-image">
-        <h1 class="hero-title">The Blog Of Jude Hoogterp</h1>
-    </div>
-    
     <div class="content">
-        <h2 class="blog-title">Night Sight</h2>
-        <div class="blog-date">May 2024</div>
-        
-        <img src="nightsight.png" alt="Night Sight" class="blog-image">
-        
-        <p>Thanks to Moore and his law, mobile devices have not just become possible, but pervasive in today's retail electronics. Consequently the peripherals to this silicon were forced to get better by a lot too (shout out capitalism.) Small high resolution displays and image sensors have become exponentially cheaper. The fruit company and the southern peninsula Chaebol found out just Moore's law itself could make them billions. First gen touch screen phones from the 2010s were comparatively bad compute wise. Therefore people became used to shelling out for a new device every two or three generations. This blindsighted the need for more innovation. That was until Luckey with Oculus, he found the perfect place where Moore allowed realtime optics distortion correction, and LCDs that were cheap enough for the consumer.</p>
-        
-        <p>Overall, mobile device peripherals have gotten VERY cheap and VERY good. For third gen vr devices two things happened, first qualcomm's xr chip. With hardware accelerated fixed foveated rendering, and other accelerations, performance and battery life 2x from generation to generation. Second, inside out tracking got good, with high fps IR cameras just coming to market Quest 2 was bound to succeed. You could say these two technical changes led to XR finally going mainstream, because the device just worked.</p>
-        
-        <p>The EM spectrum is so large that irl gradient descent (evolution) decided we don't need to see in the infrared spectrum (IR). So by gluing some chinese IR LEDs to the front of a Quest 2 and a constant current LED driver yields high quality real time night vision for under $350, very cool. But if you were Joe Rogan you would say "what if isis found out about this". Luckley with the external LEDs turned on, you become a very bright shoot me beacon to the good guys with IR cameras. Also a phased array EMP could turn this device to a Watch Dogs 2 quick kill very fast.</p>
+    <section>
+        <p class="intro">
+            I'm based in SF, interested in robot learning, space, green energy, manufacturing, semiconductors, ML and more.
+        </p>
+        <div class="links">
+            <a href="https://github.com/geogod42" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/jude-hoogterp" target="_blank">LinkedIn</a>
+            <span>jhoogterp2016 [at] gmail [dot] com</span>
+        </div>
+    </section>
 
-        <p>Today even cheaper cameras at higher specs means that perception for machines is practically solved. That being from mobile device's photos/pictures to tracking systems for self driving that used to use LiDAR that cost as much as a used prius. Overall, this was a fun weekend project to walk around in the dark with. But it shows that solving robotics from self driving to humanoids is now a software and brushless DC motor factory problem. So the next question is who will be the Palmer Lucky of robotics?</p>
+    <section>
+        <h2>Now</h2>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Residence - Afore Capital</span>
+                <span class="item-meta">San Francisco, 2025–</span>
+            </div>
+            <p class="item-description">
+                Explored sampling efficiency in robotics data.
+            </p>
+        </div>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Founder - QuickCut</span>
+                <span class="item-meta">2025–</span>
+            </div>
+            <p class="item-description">
+                Software for real-time manufacturing price comparison.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title"><a href="https://github.com/geogod42/DroneX" target="_blank">DroneX</a></span>
+            </div>
+            <p class="item-description">VLA framework for quadcopter control with embodied chain-of-thought reasoning</p>
+            <p class="project-tech">Python • VLA • Classical Control</p>
+        </div>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title"><a href="https://github.com/geogod42/spacetime_sim" target="_blank">Spacetime Simulator</a></span>
+            </div>
+            <p class="item-description">Performant physics and spacetime simulation engine</p>
+            <p class="project-tech">Rust</p>
+        </div>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Text2Gaussian</span>
+            </div>
+            <p class="item-description">Synthetic 3D asset generator using Gaussian Splatting from text prompts</p>
+            <p class="project-tech">Python • Gaussian Splatting</p>
+        </div>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title"><a href="https://github.com/geogod42/VirtDrake" target="_blank">VirtDrake</a></span>
+            </div>
+            <p class="item-description">Containerized Drake for robotic simulation</p>
+            <p class="project-tech">Docker • Drake</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Previously</h2>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Operations - Schuil Coffee</span>
+                <span class="item-meta">2025</span>
+            </div>
+            <p class="item-description">Built full-stack production monitoring with custom edge computers and 3D-printed sensor enclosures</p>
+        </div>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Research Assistant - Michigan Tech</span>
+                <span class="item-meta">2024</span>
+            </div>
+            <p class="item-description">Automated experimental analysis for the Energy-Thermo-Fluids Laboratory</p>
+        </div>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Founder - Highland Hardware</span>
+                <span class="item-meta">2019–2023</span>
+            </div>
+            <p class="item-description">
+                Designed SLA 3D-printed Quest 3 replacement parts sold to national supplier.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Michigan Technological University</span>
+                <span class="item-meta">2023–2027</span>
+            </div>
+            <p class="item-description">B.S. Computer Engineering & Industrial Engineering</p>
+            <p class="project-tech">1st Place MTU Idea Pitch • FTC Robotics Electrical Lead • Founded Coding Club</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Move fast, make things.</p>
+    </footer>
     </div>
+
+    <div class="side-image">
+        <h1 id="name">Jude Hoogterp</h1>
+        <img src="StationV.jpg" alt="Station V">
+        <p class="caption">Station V from 2001 a Space Odyssey inspired in part by Wernher von Braun</p>
+    </div>
+
+    <script>
+        let clicks = 0;
+        document.getElementById('name').addEventListener('click', () => {
+            clicks++;
+            if (clicks === 4) {
+                window.location.href = 'blog.html';
+            }
+        });
+    </script>
 </body>
-<div class="footer">
-        <span>machina deus est</span>
-        <span>Jude Hoogterp 2025</span>
-    </div>
 </html>
