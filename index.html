@@ -161,23 +161,90 @@
             font-size: 0.9rem;
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 768px) {
             body {
-                padding: 40px 20px;
+                flex-direction: column;
+                gap: 32px;
+                padding: 40px 24px;
+                padding-left: max(24px, env(safe-area-inset-left));
+                padding-right: max(24px, env(safe-area-inset-right));
+            }
+
+            .side-image {
+                order: 1;
+                text-align: left;
+                align-self: stretch;
+            }
+
+            .side-image img {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .side-image .caption {
+                text-align: left;
+            }
+
+            .content {
+                order: 2;
+                max-width: 100%;
+                margin-top: 0;
             }
 
             h1 {
-                font-size: 2rem;
+                font-size: 2.25rem;
+                margin-bottom: 24px;
+                letter-spacing: -0.4px;
+            }
+
+            .intro {
+                font-size: 1.05rem;
             }
 
             .links {
                 flex-wrap: wrap;
-                gap: 12px;
+                gap: 16px 20px;
+            }
+
+            .links a,
+            .item-title a {
+                display: inline-block;
+                min-height: 44px;
+                line-height: 44px;
+                padding-bottom: 0;
+            }
+
+            .project-media {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            section {
+                margin-bottom: 36px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 32px 20px;
+                padding-left: max(20px, env(safe-area-inset-left));
+                padding-right: max(20px, env(safe-area-inset-right));
+                gap: 28px;
+            }
+
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 20px;
             }
 
             .item-header {
                 flex-direction: column;
+                align-items: flex-start;
                 gap: 2px;
+            }
+
+            .item-meta {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -243,7 +310,7 @@
         </div>
         <div class="item">
             <div class="item-header">
-                <span class="item-title">Text2Gaussian</span>
+                <span class="item-title"><a href="https://github.com/Exo-Software/Text2Gaussian" target="_blank">Text2Gaussian</a></span>
             </div>
             <p class="item-description">Synthetic 3D asset generator from text prompts</p>
             <p class="project-tech">Python • Gaussian Splatting</p>
